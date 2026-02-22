@@ -95,41 +95,43 @@ A full-stack secure note-taking application built with **Spring Boot** and **Rea
 ┌──────────────────┐         ┌──────────────────────────────────────────┐
 │                  │  HTTP   │              Spring Boot                 │
 │   React Client   │◄───────►│                                          │
-│   (Port 3000)    │  REST   │  ┌──────────────────────────────────┐   │
-│                  │         │  │     Security Filter Chain         │   │
-└──────────────────┘         │  │                                    │   │
-                             │  │  CorsFilter                       │   │
-                             │  │  └─► CsrfFilter                  │   │
-                             │  │       └─► AuthTokenFilter (JWT)   │   │
-                             │  │            └─► AuthorizationFilter│   │
-                             │  └──────────────────────────────────┘   │
+│   (Port 3000)    │  REST   │  ┌──────────────────────────────────┐    │
+│                  │         │  │     Security Filter Chain        │    │
+└──────────────────┘         │  │                                  │    │
+                             │  │  CorsFilter                      │    │
+                             │  │  └─►CsrfFilter                   │    │
+                             │  │       └─►AuthTokenFilter (JWT)   │    │
+                             │  │            └─►AuthorizationFilter│    │
+                             │  └──────────────────────────────────┘    │
                              │                    │                     │
-                             │  ┌─────────────────▼────────────────┐   │
-                             │  │         Controllers               │   │
-                             │  │  AuthController  NoteController   │   │
-                             │  │  AdminController AuditLogController│  │
-                             │  │  CsrfTokenController              │   │
-                             │  └─────────────────┬────────────────┘   │
+                             │  ┌─────────────────▼────────────────┐    │
+                             │  │         Controllers              │    │
+                             │  │  AuthController  NoteController  │    │
+                             │  │  AdminController                 │    │
+                             │  │  CsrfTokenController             │    │
+                             │  │  AuditLogController              │    │
+                             │  └─────────────────┬────────────────┘    │
                              │                    │                     │
-                             │  ┌─────────────────▼────────────────┐   │
-                             │  │           Services                │   │
-                             │  │  UserService  NoteService         │   │
-                             │  │  AuditLogService  EmailService    │   │
-                             │  │  TotpService                      │   │
-                             │  └─────────────────┬────────────────┘   │
+                             │  ┌─────────────────▼────────────────┐    │
+                             │  │           Services               │    │
+                             │  │  UserService  NoteService        │    │
+                             │  │  AuditLogService  EmailService   │    │
+                             │  │  TotpService                     │    │
+                             │  └─────────────────┬────────────────┘    │
                              │                    │                     │
-                             │  ┌─────────────────▼────────────────┐   │
-                             │  │      JPA Repositories             │   │
-                             │  │  UserRepository  NoteRepository   │   │
-                             │  │  RoleRepository  AuditLogRepository│  │
-                             │  │  PasswordResetTokenRepository     │   │
-                             │  └─────────────────┬────────────────┘   │
+                             │  ┌─────────────────▼────────────────┐    │
+                             │  │      JPA Repositories            │    │
+                             │  │  UserRepository  NoteRepository  │    │
+                             │  │  RoleRepository                  │    │
+                             │  │  AuditLogRepository              │    │
+                             │  │  PasswordResetTokenRepository    │    │
+                             │  └─────────────────┬────────────────┘    │
                              │                    │                     │
                              └────────────────────┼─────────────────────┘
                                                   │
                                          ┌────────▼────────┐
-                                         │     MySQL DB     │
-                                         │  (securenotes)   │
+                                         │     MySQL DB    │
+                                         │  (securenotes)  │
                                          └─────────────────┘
 ```
 
