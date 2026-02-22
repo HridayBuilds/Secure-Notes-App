@@ -482,7 +482,7 @@ Secure-Notes-App/
 
 | Login | Sign Up |
 |:---:|:---:|
-| ![Login](Images/login-page.png) | ![Sign Up](Images/signup-page.png) |
+| ![Login](Images/signup-page.png) | ![Sign Up](Images/forgot-password.png) |
 
 ### Notes Management
 
