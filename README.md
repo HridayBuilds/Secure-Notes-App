@@ -513,6 +513,3 @@ Secure-Notes-App/
 
 ---
 
-## License
-
-This project is for educational and portfolio purposes.
